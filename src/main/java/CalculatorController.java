@@ -16,12 +16,13 @@ public class CalculatorController {
             double num2 = Double.parseDouble(number2Field.getText());
 
             double sum = num1 + num2;
+            double sub = num1 - num2;
             double product = num1 * num2;
-
-            resultLabel.setText("Sum: " + sum + ", Product: " + product);
+            double divide = num1 / num2;
+            resultLabel.setText("Sum: " + sum + ", Subtract :" + sub + ", Product: " + product + ", Divide :" + divide);
 
             // Save to DB
-            ResultService.saveResult(num1, num2, sum, product);
+            ResultService.saveResult(num1, num2, sum, sub, product, divide);
 
         } catch (NumberFormatException e) {
             resultLabel.setText("Please enter valid numbers!");
