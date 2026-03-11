@@ -14,12 +14,6 @@ pipeline {
 
   stages {
 
-      stage('Checkout') {
-          steps {
-              git 'https://github.com/RForSwan/SEP1_w7_calculator_fx_db'
-          }
-      }
-
       stage('Run Tests') {
           steps {
               bat 'mvn clean test'
